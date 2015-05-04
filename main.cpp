@@ -11,20 +11,6 @@
 
 using namespace std;
 
-vector<int> regs(32,0); // registros
-
-void DADDI(int RX, int RY, int n){
-    regs[RX] = regs[RY] + n;
-}
-
-void DADD(int RX, int RY, int RZ){
-    regs[RX] = regs[RY] + regs[RZ];
-}
-
-void DSUB(int RX, int RY, int RZ){
-    regs[RX] = regs[RY] - regs[RZ]; //números negativos?
-}
-
 /*
  * Función que devuleve un arreglo con los nombres de los archivos en el directorio path
  */
