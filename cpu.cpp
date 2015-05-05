@@ -24,3 +24,15 @@ cpu::~cpu(){
 int cpu::get_pc() const {
     return pc;
 }
+
+void cpu::DADDI(int RX, int RY, int n){
+    regs[RX] = regs[RY] + n;
+}
+
+void cpu::DADD(int RX, int RY, int RZ){
+    regs[RX] = regs[RY] + regs[RZ];
+}
+
+void cpu::DSUB(int RX, int RY, int RZ){
+    regs[RX] = regs[RY] - regs[RZ];
+}
