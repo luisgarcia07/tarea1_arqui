@@ -18,6 +18,7 @@ public:
     int pc;
     int * mem;
     int * threads;
+    int regs[32];
     
     cpu();
     
@@ -26,6 +27,12 @@ public:
     ~cpu();
     
     int get_pc() const;
+    
+    void DADDI(int, int, int);
+
+    void DADD(int, int, int);
+
+    void DSUB(int, int, int);
     
     
 private:
