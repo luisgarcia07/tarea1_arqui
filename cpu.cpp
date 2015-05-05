@@ -36,3 +36,43 @@ void cpu::DADD(int RX, int RY, int RZ){
 void cpu::DSUB(int RX, int RY, int RZ){
     regs[RX] = regs[RY] - regs[RZ];
 }
+
+void cpu::cargarInstruccion(int op, int rf1, int rf2d, int rd){
+    ir[0] = op;
+    ir[1] = rf1;
+    ir[2] = rf2d;
+    ir[3] = rd;
+}
+
+void cpu::ejecutarInstruccion(){
+    switch( ir[0] ){
+        case 4:
+            //cpu::BEQZ();
+            break;
+        case 5:
+            //cpu::BNEZ();
+            break;
+        case 8:
+            cpu::DADDI(ir[2], ir[1], ir[3]);
+            break;
+        case 32:
+            cpu::DADD(ir[3], ir[1], ir[2]);
+            break;
+        case 34:
+            cpu::DSUB(ir[3], ir[1], ir[2]);
+            break;
+        case 35:
+            //cpu::LW();
+            break;
+        case 43:
+            //cpu::SW();
+            break;
+        case 63:
+            //cpu::FIN();
+            break;
+        default:
+            cout << "\nCodigo de operacion invalido.\n";
+            break;
+    }
+    //pc++;
+}
