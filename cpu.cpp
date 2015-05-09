@@ -56,14 +56,17 @@ int cpu::get_pc() const {
 
 void cpu::DADDI(int RX, int RY, int n){
     regs[RX] = regs[RY] + n;
+    pc += 2;
 }
 
 void cpu::DADD(int RX, int RY, int RZ){
     regs[RX] = regs[RY] + regs[RZ];
+    pc +=2;
 }
 
 void cpu::DSUB(int RX, int RY, int RZ){
     regs[RX] = regs[RY] - regs[RZ];
+    pc +=2;
 }
 
 void cpu::cargarInstruccion(int op, int rf1, int rf2d, int rd){

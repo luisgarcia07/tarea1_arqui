@@ -56,13 +56,13 @@ void preguntarDatos(vector<string> &nombres_de_archivo){
     
     // Preguntar la cantidad de hilos a ejecutar
     int cantidad_de_hilos = 3;
-    //cout << "Cuantos hilos desea ejecutar ? ->  ";
-    //cin >> cantidad_de_hilos;
+    cout << "Cuantos hilos desea ejecutar ? ->  ";
+    cin >> cantidad_de_hilos;
     
     // Preguntar el directorio donde se encuentran los hilos
     string path = "/Users/nehemias/Desktop/CI-1323/Proyecto/tarea1_arqui/hilos/";
-    //cout << "Donde se encuentran los hilos ?, digite ./ para el directorio actual ->  ";
-    //cin >> path;
+    cout << "Donde se encuentran los hilos ?, digite ./ para el directorio actual ->  ";
+    cin >> path;
     
     //~/Desktop/CI-1323/Proyecto/tarea1_arqui/hilos
     
@@ -72,14 +72,13 @@ void preguntarDatos(vector<string> &nombres_de_archivo){
     imprimir(directorio);
     
     // Preguntar por los hijos a ejecutar
-    //for (int i = 1; i <= cantidad_de_hilos; i++) {
-    for (int i = 3; i <= 5; i++) {
-        nombres_de_archivo.push_back(directorio[i]); // Almacenar el nombre del hilo a ejecutar
-        //cout << "Digite el indice del " << i << "º hilo ->  ";
-        //int temporal;
-        //cin >> temporal;
-        //nombres_de_archivo.push_back(directorio[temporal]); // Almacenar el nombre del hilo a ejecutar
-        
+    for (int i = 1; i <= cantidad_de_hilos; i++) {
+    // for (int i = 3; i <= 5; i++) {
+    //     nombres_de_archivo.push_back(directorio[i]); // Almacenar el nombre del hilo a ejecutar
+        cout << "Digite el indice del " << i << "º hilo ->  ";
+        int temporal;
+        cin >> temporal;
+        nombres_de_archivo.push_back(directorio[temporal]); // Almacenar el nombre del hilo a ejecutar
     }
 }
 
